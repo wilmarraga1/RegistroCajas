@@ -22,10 +22,10 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Email</th>
-                    <th>Contact</th>
-                    <th>Gender</th>
-                    <th>Media</th>
+                    <th>Fecha</th>
+                    <th>Referencia</th>
+                    <th>Estado</th>
+                    <th>Imagen</th>
                     <th>Message</th>
 
                 </tr>
@@ -38,7 +38,7 @@
 
     <script>
         $(document).ready(function() {
-            const webAppUrl =  "https://script.google.com/macros/s/AKfycbyiUUl_PE8n84XnfO2pRQvnPnPHFXBBNwPS7qP4ouzd8pmW7_vL96Su7UXMtgfYmTSA/exec";
+            const webAppUrl =  'https://script.google.com/macros/s/AKfycbyiUUl_PE8n84XnfO2pRQvnPnPHFXBBNwPS7qP4ouzd8pmW7_vL96Su7UXMtgfYmTSA/exec';
 
             fetch(webAppUrl)
                 .then(response => response.json())
@@ -48,9 +48,9 @@
                         let tr = document.createElement('tr');
                         tr.innerHTML = `
                             <td>${row['name']}</td>
-                            <td>${row['email']}</td>
-                            <td>${row['contact_number']}</td>
-                            <td>${row['gender']}</td>
+                            <td>${row['datetime']}</td>
+                            <td>${row['referencia']}</td>
+                            <td>${row['estado']}</td>
                             <td><a href='${row['media']}' target='_blank'>
                                 Open Link
                             </a></td>
